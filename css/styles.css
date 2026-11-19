@@ -1,0 +1,258 @@
+/* =====================================================
+   Proyecto Login / Registro - Hoja de estilos
+   Diseño responsive (mobile first)
+   ===================================================== */
+
+:root {
+  --color-primario: #4f6ef7;
+  --color-primario-oscuro: #3b5bdb;
+  --color-fondo-1: #1f7ae0;
+  --color-fondo-2: #46a3f5;
+  --color-texto: #1f2937;
+  --color-texto-suave: #6b7280;
+  --color-error: #e03131;
+  --color-error-fondo: #fff0f0;
+  --color-exito: #2b8a3e;
+  --color-exito-fondo: #ebfbee;
+  --color-borde: #dbe4ff;
+  --radio: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-texto);
+  background: linear-gradient(135deg, var(--color-fondo-1) 0%, var(--color-fondo-2) 100%);
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 440px;
+}
+
+/* ---------- Tarjeta blanca ---------- */
+.tarjeta {
+  background: #fff;
+  padding: 40px 34px;
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(11, 44, 90, 0.28);
+}
+
+.titulo {
+  margin: 0 0 28px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+}
+
+.subtitulo {
+  margin: -16px 0 26px;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* ---------- Campos del formulario ---------- */
+.campo {
+  margin-bottom: 16px;
+}
+
+/* Etiqueta solo para lectores de pantalla (el diseño muestra el placeholder) */
+.campo label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.campo input {
+  width: 100%;
+  padding: 15px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-texto);
+  background: #fff;
+  border: 1.5px solid var(--color-borde);
+  border-radius: var(--radio);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input::placeholder {
+  color: #9aa4b8;
+}
+
+.campo input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 4px rgba(79, 110, 247, 0.15);
+}
+
+.campo input.input-error {
+  border-color: var(--color-error);
+}
+
+.campo input.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(224, 49, 49, 0.12);
+}
+
+.mensaje-error {
+  display: none;
+  margin: 6px 2px 0;
+  font-size: 0.85rem;
+  color: var(--color-error);
+}
+
+.mensaje-error.visible {
+  display: block;
+}
+
+/* ---------- Botones ---------- */
+.btn-principal {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-primario);
+  border: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-principal:hover {
+  background: var(--color-primario-oscuro);
+}
+
+.btn-principal:active {
+  transform: translateY(1px);
+}
+
+.btn-salir {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #e5484d;
+  border-radius: var(--radio);
+  transition: background 0.2s;
+}
+
+.btn-salir:hover {
+  background: #c92a2a;
+  text-decoration: none;
+}
+
+/* ---------- Enlaces de opciones ---------- */
+.opciones {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.opciones p {
+  margin: 12px 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.opciones a,
+.enlace-vuelta {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.opciones a:hover,
+.enlace-vuelta:hover {
+  text-decoration: underline;
+}
+
+.enlace-vuelta {
+  display: block;
+  margin-top: 22px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------- Mensajes de éxito / error ---------- */
+.alerta {
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.alerta-exito {
+  color: var(--color-exito);
+  background: var(--color-exito-fondo);
+  border: 1px solid #b2f2bb;
+}
+
+.alerta-error {
+  color: var(--color-error);
+  background: var(--color-error-fondo);
+  border: 1px solid #ffc9c9;
+}
+
+/* ---------- Panel de bienvenida ---------- */
+.panel-datos {
+  padding: 0;
+  margin: 0 0 26px;
+  list-style: none;
+}
+
+.panel-datos li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eef2ff;
+}
+
+.panel-datos li span:first-child {
+  color: var(--color-texto-suave);
+}
+
+.panel-datos li span:last-child {
+  font-weight: 600;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .tarjeta {
+    padding: 32px 22px;
+    border-radius: 20px;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+}
